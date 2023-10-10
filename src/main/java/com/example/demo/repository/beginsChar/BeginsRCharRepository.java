@@ -1,12 +1,12 @@
-package com.example.demo.entity.beginsChar;
+package com.example.demo.repository.beginsChar;
 
-import com.example.demo.entity.beginsChar.BeginsSChar;
+import com.example.demo.entity.beginsChar.BeginsRChar;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
 
-public interface BeginsSCharRepository extends JpaRepository<BeginsSChar, Long> {
+public interface BeginsRCharRepository extends JpaRepository<BeginsRChar, Long> {
 
-    Optional<BeginsSChar> findBySource(String source);
+    Optional<BeginsRChar> findBySource(String source);
 }

@@ -3,10 +3,10 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: root
-    url: jdbc:postgresql://localhost:5432/kanachsnund
+    url: jdbc:postgresql://localhost:5432/translate-realtime-server
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -18,20 +18,3 @@ spring:
         order_updates: true
         order_inserts: true
     open-in-view: false
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
-  liquibase:
-    change-log: classpath:db/migration.xml
-
-project:
-  username: admin
-  password: admin
-  images:
-    product: D:\\images
-
-server:
-  error:
-    whitelabel:
-      enabled: false
-    path: /error

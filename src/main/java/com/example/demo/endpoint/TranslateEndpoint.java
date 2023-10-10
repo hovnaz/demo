@@ -1,30 +1,35 @@
-package com.example.demo;
+package com.example.demo.endpoint;
 
-import com.example.demo.service.ReadyForTranslateService;
+import com.example.demo.service.TranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/translate")
+@RequestMapping("/api/translate")
 @RequiredArgsConstructor
 public class TranslateEndpoint {
 
-    private final ReadyForTranslateService translateService;
+    private final TranslateService translateService;
 
-
-    @PostMapping
-    public void addTranslation(@RequestBody String source) {
-        translateService.add(source);
+    @PostMapping("/add")
+    public void addTranslation(@RequestParam String source, @RequestParam String translation) {
+        translateService.addTranslation(source, translation);
     }
 
-    @GetMapping("/list")
-    public List<String> getTop100Translations() {
-        return translateService.getAndRemoveTop100();
+    @GetMapping("/findBySource")
+    public boolean findBySource(@RequestParam String source) {
+        return translateService.findBySource(source);
+    }
+
+    @GetMapping("/exportData")
+    public Map<String, String> exportDataAsMap() {
+        return translateService.exportDataAsMap();
     }
 }

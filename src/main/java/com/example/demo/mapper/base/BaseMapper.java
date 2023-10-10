@@ -1,4 +1,4 @@
-package am.automobile.pumba.core.mapper.base;
+package com.example.demo.mapper.base;
 
 /**
  * BaseMapper interface for mapping between request and response objects and entity objects.

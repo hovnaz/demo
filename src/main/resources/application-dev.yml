@@ -2,11 +2,6 @@ spring:
   datasource:
     username: postgres
     password: fjvedhf43672873ehjcbeg463487hcehvcgecje
-    url: jdbc:postgresql://dbpostgresql:5432/kanachsnund
-project:
-  username: kanachsnund.marketing@gmail.com
-  password: Kanachsnund-new-project
-  images:
-    product: /var/images
+    url: jdbc:postgresql://dbpostgresql:5432/translate-realtime-server
 server:
   port: 80

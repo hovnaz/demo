@@ -2,15 +2,17 @@ package com.example.demo.service.impl;
 
 import com.example.demo.entity.beginsChar.*;
 import com.example.demo.repository.beginsChar.*;
-import com.example.demo.service.Translate;
+import com.example.demo.service.TranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class TranslateService implements Translate {
+public class TranslateServiceImpl implements TranslateService {
 
     private final BeginsACharRepository beginsACharRepository;
     private final BeginsBCharRepository beginsBCharRepository;
@@ -42,8 +44,8 @@ public class TranslateService implements Translate {
 
     @Override
     public void addTranslation(String source, String translation) {
-        String newSource = new String(source.toLowerCase().replaceAll("\\s+", " ").trim());
-        String newTranslation = new String(translation.replaceAll("\\s+", " ").trim());
+        String newSource = source.toLowerCase().replaceAll("\\s+", " ").trim();
+        String newTranslation = translation.replaceAll("\\s+", " ").trim();
 
         if (newSource.length() == 0) {
             return;
@@ -311,5 +313,128 @@ public class TranslateService implements Translate {
                 }
             }
         }
+    }
+
+    public boolean findBySource(String source) {
+        String newSource = source.toLowerCase().replaceAll("\\s+", " ").trim();
+        if (newSource.length() == 0) {
+            return false;
+        }
+        char startingChar = Character.toLowerCase(source.charAt(0));
+        return switch (startingChar) {
+            case 'a' -> beginsACharRepository.findBySource(newSource).isPresent();
+            case 'b' -> beginsBCharRepository.findBySource(newSource).isPresent();
+            case 'c' -> beginsCCharRepository.findBySource(newSource).isPresent();
+            case 'd' -> beginsDCharRepository.findBySource(newSource).isPresent();
+            case 'e' -> beginsECharRepository.findBySource(newSource).isPresent();
+            case 'f' -> beginsFCharRepository.findBySource(newSource).isPresent();
+            case 'g' -> beginsGCharRepository.findBySource(newSource).isPresent();
+            case 'h' -> beginsHCharRepository.findBySource(newSource).isPresent();
+            case 'i' -> beginsICharRepository.findBySource(newSource).isPresent();
+            case 'j' -> beginsJCharRepository.findBySource(newSource).isPresent();
+            case 'k' -> beginsKCharRepository.findBySource(newSource).isPresent();
+            case 'l' -> beginsLCharRepository.findBySource(newSource).isPresent();
+            case 'm' -> beginsMCharRepository.findBySource(newSource).isPresent();
+            case 'n' -> beginsNCharRepository.findBySource(newSource).isPresent();
+            case 'o' -> beginsOCharRepository.findBySource(newSource).isPresent();
+            case 'p' -> beginsPCharRepository.findBySource(newSource).isPresent();
+            case 'q' -> beginsQCharRepository.findBySource(newSource).isPresent();
+            case 'r' -> beginsRCharRepository.findBySource(newSource).isPresent();
+            case 's' -> beginsSCharRepository.findBySource(newSource).isPresent();
+            case 't' -> beginsTCharRepository.findBySource(newSource).isPresent();
+            case 'u' -> beginsUCharRepository.findBySource(newSource).isPresent();
+            case 'v' -> beginsVCharRepository.findBySource(newSource).isPresent();
+            case 'w' -> beginsWCharRepository.findBySource(newSource).isPresent();
+            case 'x' -> beginsXCharRepository.findBySource(newSource).isPresent();
+            case 'y' -> beginsYCharRepository.findBySource(newSource).isPresent();
+            case 'z' -> beginsZCharRepository.findBySource(newSource).isPresent();
+            default -> false;
+        };
+    }
+
+    public Map<String, String> exportDataAsMap() {
+        Map<String, String> translationMap = new HashMap<>();
+
+        beginsACharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+
+        beginsBCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+
+        beginsCCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsDCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsECharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsFCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsGCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsHCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsICharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsJCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsKCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsLCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsMCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsNCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsOCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsPCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsQCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsRCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsSCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsTCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsUCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsVCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsWCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsWCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsYCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        beginsZCharRepository.findAll().forEach(item -> {
+            translationMap.put(item.getSource(), item.getTranslation());
+        });
+        return translationMap;
     }
 }
