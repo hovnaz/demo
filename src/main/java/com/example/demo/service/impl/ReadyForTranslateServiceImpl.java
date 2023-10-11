@@ -23,7 +23,7 @@ public class ReadyForTranslateServiceImpl implements ReadyForTranslateService {
     @Override
     public void add(String source) {
         String newSource = source.toLowerCase().replaceAll("\\s+", " ").trim();
-        if (translateService.findBySource(newSource)){
+        if (translateService.findBySource(newSource)) {
             return;
         }
         Optional<ReadyForTranslate> bySourceOptional = readyForTranslateRepository.findBySource(newSource);
@@ -49,5 +49,10 @@ public class ReadyForTranslateServiceImpl implements ReadyForTranslateService {
         readyForTranslateRepository.deleteAll(readyForTranslates);
 
         return sourceValues;
+    }
+
+    @Override
+    public long count() {
+        return readyForTranslateRepository.count();
     }
 }

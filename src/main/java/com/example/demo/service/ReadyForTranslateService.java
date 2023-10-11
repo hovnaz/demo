@@ -7,4 +7,6 @@ public interface ReadyForTranslateService {
     void add(String source);
 
     List<String> getAndRemoveTop100();
+
+    long count();
 }

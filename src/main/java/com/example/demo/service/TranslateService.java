@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.util.Map;
+import org.springframework.data.domain.Page;
 
 public interface TranslateService {
 
@@ -8,5 +8,5 @@ public interface TranslateService {
 
     boolean findBySource(String source);
 
-    Map<String, String> exportDataAsMap();
+    Page<?> exportDataAsMap(char byStartChar);
 }

@@ -4,7 +4,6 @@ import com.example.demo.service.ReadyForTranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,5 +25,10 @@ public class ReadyForTranslateEndpoint {
     @GetMapping("/getAndRemove")
     public List<String> getTop100() {
         return readyForTranslateService.getAndRemoveTop100();
+    }
+
+    @GetMapping("/count")
+    public long count() {
+        return readyForTranslateService.count();
     }
 }

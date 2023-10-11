@@ -3,11 +3,12 @@ package com.example.demo.service.impl;
 import com.example.demo.entity.beginsChar.*;
 import com.example.demo.repository.beginsChar.*;
 import com.example.demo.service.TranslateService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -352,89 +353,36 @@ public class TranslateServiceImpl implements TranslateService {
         };
     }
 
-    public Map<String, String> exportDataAsMap() {
-        Map<String, String> translationMap = new HashMap<>();
-
-        beginsACharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-
-        beginsBCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-
-        beginsCCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsDCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsECharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsFCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsGCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsHCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsICharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsJCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsKCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsLCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsMCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsNCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsOCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsPCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsQCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsRCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsSCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsTCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsUCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsVCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsWCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsWCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsYCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        beginsZCharRepository.findAll().forEach(item -> {
-            translationMap.put(item.getSource(), item.getTranslation());
-        });
-        return translationMap;
+    public Page<?> exportDataAsMap(char byStartChar) {
+        Pageable pageable = Pageable.ofSize(100_000);
+        return switch (byStartChar) {
+            case 'a' -> beginsACharRepository.findAll(pageable);
+            case 'b' -> beginsBCharRepository.findAll(pageable);
+            case 'c' -> beginsCCharRepository.findAll(pageable);
+            case 'd' -> beginsDCharRepository.findAll(pageable);
+            case 'e' -> beginsECharRepository.findAll(pageable);
+            case 'f' -> beginsFCharRepository.findAll(pageable);
+            case 'g' -> beginsGCharRepository.findAll(pageable);
+            case 'h' -> beginsHCharRepository.findAll(pageable);
+            case 'i' -> beginsICharRepository.findAll(pageable);
+            case 'j' -> beginsJCharRepository.findAll(pageable);
+            case 'k' -> beginsKCharRepository.findAll(pageable);
+            case 'l' -> beginsLCharRepository.findAll(pageable);
+            case 'm' -> beginsMCharRepository.findAll(pageable);
+            case 'n' -> beginsNCharRepository.findAll(pageable);
+            case 'o' -> beginsOCharRepository.findAll(pageable);
+            case 'p' -> beginsPCharRepository.findAll(pageable);
+            case 'q' -> beginsQCharRepository.findAll(pageable);
+            case 'r' -> beginsRCharRepository.findAll(pageable);
+            case 's' -> beginsSCharRepository.findAll(pageable);
+            case 't' -> beginsTCharRepository.findAll(pageable);
+            case 'u' -> beginsUCharRepository.findAll(pageable);
+            case 'v' -> beginsVCharRepository.findAll(pageable);
+            case 'w' -> beginsWCharRepository.findAll(pageable);
+            case 'x' -> beginsXCharRepository.findAll(pageable);
+            case 'y' -> beginsYCharRepository.findAll(pageable);
+            case 'z' -> beginsZCharRepository.findAll(pageable);
+            default -> throw new EntityNotFoundException();
+        };
     }
 }
