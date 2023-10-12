@@ -52,6 +52,11 @@ public class ReadyForTranslateServiceImpl implements ReadyForTranslateService {
     }
 
     @Override
+    public List<ReadyForTranslate> getAll() {
+        return readyForTranslateRepository.findAll();
+    }
+
+    @Override
     public long count() {
         return readyForTranslateRepository.count();
     }
