@@ -45,270 +45,268 @@ public class TranslateServiceImpl implements TranslateService {
 
     @Override
     public void addTranslation(String source, String translation) {
-        String newSource = source.toLowerCase().replaceAll("\\s+", " ").trim();
-        String newTranslation = translation.replaceAll("\\s+", " ").trim();
 
-        if (newSource.length() == 0) {
+        if (source.length() == 0) {
             return;
         }
         char startingChar = Character.toLowerCase(source.charAt(0));
         switch (startingChar) {
             case 'a' -> {
-                Optional<BeginsAChar> bySourceAOptional = beginsACharRepository.findBySource(newSource);
+                Optional<BeginsAChar> bySourceAOptional = beginsACharRepository.findBySource(source);
                 if (bySourceAOptional.isEmpty()) {
                     BeginsAChar build = BeginsAChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsACharRepository.save(build);
                 }
             }
             case 'b' -> {
-                Optional<BeginsBChar> bySourceBOptional = beginsBCharRepository.findBySource(newSource);
+                Optional<BeginsBChar> bySourceBOptional = beginsBCharRepository.findBySource(source);
                 if (bySourceBOptional.isEmpty()) {
                     BeginsBChar build = BeginsBChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsBCharRepository.save(build);
                 }
             }
             case 'c' -> {
-                Optional<BeginsCChar> bySourceCOptional = beginsCCharRepository.findBySource(newSource);
+                Optional<BeginsCChar> bySourceCOptional = beginsCCharRepository.findBySource(source);
                 if (bySourceCOptional.isEmpty()) {
                     BeginsCChar build = BeginsCChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsCCharRepository.save(build);
                 }
             }
             case 'd' -> {
-                Optional<BeginsDChar> bySourceDOptional = beginsDCharRepository.findBySource(newSource);
+                Optional<BeginsDChar> bySourceDOptional = beginsDCharRepository.findBySource(source);
                 if (bySourceDOptional.isEmpty()) {
                     BeginsDChar build = BeginsDChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsDCharRepository.save(build);
                 }
             }
             case 'e' -> {
-                Optional<BeginsEChar> bySourceEOptional = beginsECharRepository.findBySource(newSource);
+                Optional<BeginsEChar> bySourceEOptional = beginsECharRepository.findBySource(source);
                 if (bySourceEOptional.isEmpty()) {
                     BeginsEChar build = BeginsEChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsECharRepository.save(build);
                 }
             }
             case 'f' -> {
-                Optional<BeginsFChar> bySourceFOptional = beginsFCharRepository.findBySource(newSource);
+                Optional<BeginsFChar> bySourceFOptional = beginsFCharRepository.findBySource(source);
                 if (bySourceFOptional.isEmpty()) {
                     BeginsFChar build = BeginsFChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsFCharRepository.save(build);
                 }
             }
             case 'g' -> {
-                Optional<BeginsGChar> bySourceGOptional = beginsGCharRepository.findBySource(newSource);
+                Optional<BeginsGChar> bySourceGOptional = beginsGCharRepository.findBySource(source);
                 if (bySourceGOptional.isEmpty()) {
                     BeginsGChar build = BeginsGChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsGCharRepository.save(build);
                 }
             }
             case 'h' -> {
-                Optional<BeginsHChar> bySourceHOptional = beginsHCharRepository.findBySource(newSource);
+                Optional<BeginsHChar> bySourceHOptional = beginsHCharRepository.findBySource(source);
                 if (bySourceHOptional.isEmpty()) {
                     BeginsHChar build = BeginsHChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsHCharRepository.save(build);
                 }
             }
             case 'i' -> {
-                Optional<BeginsIChar> bySourceIOptional = beginsICharRepository.findBySource(newSource);
+                Optional<BeginsIChar> bySourceIOptional = beginsICharRepository.findBySource(source);
                 if (bySourceIOptional.isEmpty()) {
                     BeginsIChar build = BeginsIChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsICharRepository.save(build);
                 }
             }
             case 'j' -> {
-                Optional<BeginsJChar> bySourceJOptional = beginsJCharRepository.findBySource(newSource);
+                Optional<BeginsJChar> bySourceJOptional = beginsJCharRepository.findBySource(source);
                 if (bySourceJOptional.isEmpty()) {
                     BeginsJChar build = BeginsJChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsJCharRepository.save(build);
                 }
             }
             case 'k' -> {
-                Optional<BeginsKChar> bySourceKOptional = beginsKCharRepository.findBySource(newSource);
+                Optional<BeginsKChar> bySourceKOptional = beginsKCharRepository.findBySource(source);
                 if (bySourceKOptional.isEmpty()) {
                     BeginsKChar build = BeginsKChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsKCharRepository.save(build);
                 }
             }
             case 'l' -> {
-                Optional<BeginsLChar> bySourceLOptional = beginsLCharRepository.findBySource(newSource);
+                Optional<BeginsLChar> bySourceLOptional = beginsLCharRepository.findBySource(source);
                 if (bySourceLOptional.isEmpty()) {
                     BeginsLChar build = BeginsLChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsLCharRepository.save(build);
                 }
             }
             case 'm' -> {
-                Optional<BeginsMChar> bySourceMOptional = beginsMCharRepository.findBySource(newSource);
+                Optional<BeginsMChar> bySourceMOptional = beginsMCharRepository.findBySource(source);
                 if (bySourceMOptional.isEmpty()) {
                     BeginsMChar build = BeginsMChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsMCharRepository.save(build);
                 }
             }
             case 'n' -> {
-                Optional<BeginsNChar> bySourceNOptional = beginsNCharRepository.findBySource(newSource);
+                Optional<BeginsNChar> bySourceNOptional = beginsNCharRepository.findBySource(source);
                 if (bySourceNOptional.isEmpty()) {
                     BeginsNChar build = BeginsNChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsNCharRepository.save(build);
                 }
             }
             case 'o' -> {
-                Optional<BeginsOChar> bySourceOOptional = beginsOCharRepository.findBySource(newSource);
+                Optional<BeginsOChar> bySourceOOptional = beginsOCharRepository.findBySource(source);
                 if (bySourceOOptional.isEmpty()) {
                     BeginsOChar build = BeginsOChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsOCharRepository.save(build);
                 }
             }
             case 'p' -> {
-                Optional<BeginsPChar> bySourcePOptional = beginsPCharRepository.findBySource(newSource);
+                Optional<BeginsPChar> bySourcePOptional = beginsPCharRepository.findBySource(source);
                 if (bySourcePOptional.isEmpty()) {
                     BeginsPChar build = BeginsPChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsPCharRepository.save(build);
                 }
             }
             case 'q' -> {
-                Optional<BeginsQChar> bySourceQOptional = beginsQCharRepository.findBySource(newSource);
+                Optional<BeginsQChar> bySourceQOptional = beginsQCharRepository.findBySource(source);
                 if (bySourceQOptional.isEmpty()) {
                     BeginsQChar build = BeginsQChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsQCharRepository.save(build);
                 }
             }
             case 'r' -> {
-                Optional<BeginsRChar> bySourceROptional = beginsRCharRepository.findBySource(newSource);
+                Optional<BeginsRChar> bySourceROptional = beginsRCharRepository.findBySource(source);
                 if (bySourceROptional.isEmpty()) {
                     BeginsRChar build = BeginsRChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsRCharRepository.save(build);
                 }
             }
             case 's' -> {
-                Optional<BeginsSChar> bySourceSOptional = beginsSCharRepository.findBySource(newSource);
+                Optional<BeginsSChar> bySourceSOptional = beginsSCharRepository.findBySource(source);
                 if (bySourceSOptional.isEmpty()) {
                     BeginsSChar build = BeginsSChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsSCharRepository.save(build);
                 }
             }
             case 't' -> {
-                Optional<BeginsTChar> bySourceTOptional = beginsTCharRepository.findBySource(newSource);
+                Optional<BeginsTChar> bySourceTOptional = beginsTCharRepository.findBySource(source);
                 if (bySourceTOptional.isEmpty()) {
                     BeginsTChar build = BeginsTChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsTCharRepository.save(build);
                 }
             }
             case 'u' -> {
-                Optional<BeginsUChar> bySourceUOptional = beginsUCharRepository.findBySource(newSource);
+                Optional<BeginsUChar> bySourceUOptional = beginsUCharRepository.findBySource(source);
                 if (bySourceUOptional.isEmpty()) {
                     BeginsUChar build = BeginsUChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsUCharRepository.save(build);
                 }
             }
             case 'v' -> {
-                Optional<BeginsVChar> bySourceVOptional = beginsVCharRepository.findBySource(newSource);
+                Optional<BeginsVChar> bySourceVOptional = beginsVCharRepository.findBySource(source);
                 if (bySourceVOptional.isEmpty()) {
                     BeginsVChar build = BeginsVChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsVCharRepository.save(build);
                 }
             }
             case 'w' -> {
-                Optional<BeginsWChar> bySourceWOptional = beginsWCharRepository.findBySource(newSource);
+                Optional<BeginsWChar> bySourceWOptional = beginsWCharRepository.findBySource(source);
                 if (bySourceWOptional.isEmpty()) {
                     BeginsWChar build = BeginsWChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsWCharRepository.save(build);
                 }
             }
             case 'x' -> {
-                Optional<BeginsXChar> bySourceXOptional = beginsXCharRepository.findBySource(newSource);
+                Optional<BeginsXChar> bySourceXOptional = beginsXCharRepository.findBySource(source);
                 if (bySourceXOptional.isEmpty()) {
                     BeginsXChar build = BeginsXChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsXCharRepository.save(build);
                 }
             }
             case 'y' -> {
-                Optional<BeginsYChar> bySourceYOptional = beginsYCharRepository.findBySource(newSource);
+                Optional<BeginsYChar> bySourceYOptional = beginsYCharRepository.findBySource(source);
                 if (bySourceYOptional.isEmpty()) {
                     BeginsYChar build = BeginsYChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsYCharRepository.save(build);
                 }
             }
             case 'z' -> {
-                Optional<BeginsZChar> bySourceZOptional = beginsZCharRepository.findBySource(newSource);
+                Optional<BeginsZChar> bySourceZOptional = beginsZCharRepository.findBySource(source);
                 if (bySourceZOptional.isEmpty()) {
                     BeginsZChar build = BeginsZChar.builder()
-                            .source(newSource)
-                            .translation(newTranslation)
+                            .source(source)
+                            .translation(translation)
                             .build();
                     beginsZCharRepository.save(build);
                 }
@@ -317,38 +315,37 @@ public class TranslateServiceImpl implements TranslateService {
     }
 
     public boolean findBySource(String source) {
-        String newSource = source.toLowerCase().replaceAll("\\s+", " ").trim();
-        if (newSource.length() == 0) {
+        if (source.length() == 0) {
             return false;
         }
         char startingChar = Character.toLowerCase(source.charAt(0));
         return switch (startingChar) {
-            case 'a' -> beginsACharRepository.findBySource(newSource).isPresent();
-            case 'b' -> beginsBCharRepository.findBySource(newSource).isPresent();
-            case 'c' -> beginsCCharRepository.findBySource(newSource).isPresent();
-            case 'd' -> beginsDCharRepository.findBySource(newSource).isPresent();
-            case 'e' -> beginsECharRepository.findBySource(newSource).isPresent();
-            case 'f' -> beginsFCharRepository.findBySource(newSource).isPresent();
-            case 'g' -> beginsGCharRepository.findBySource(newSource).isPresent();
-            case 'h' -> beginsHCharRepository.findBySource(newSource).isPresent();
-            case 'i' -> beginsICharRepository.findBySource(newSource).isPresent();
-            case 'j' -> beginsJCharRepository.findBySource(newSource).isPresent();
-            case 'k' -> beginsKCharRepository.findBySource(newSource).isPresent();
-            case 'l' -> beginsLCharRepository.findBySource(newSource).isPresent();
-            case 'm' -> beginsMCharRepository.findBySource(newSource).isPresent();
-            case 'n' -> beginsNCharRepository.findBySource(newSource).isPresent();
-            case 'o' -> beginsOCharRepository.findBySource(newSource).isPresent();
-            case 'p' -> beginsPCharRepository.findBySource(newSource).isPresent();
-            case 'q' -> beginsQCharRepository.findBySource(newSource).isPresent();
-            case 'r' -> beginsRCharRepository.findBySource(newSource).isPresent();
-            case 's' -> beginsSCharRepository.findBySource(newSource).isPresent();
-            case 't' -> beginsTCharRepository.findBySource(newSource).isPresent();
-            case 'u' -> beginsUCharRepository.findBySource(newSource).isPresent();
-            case 'v' -> beginsVCharRepository.findBySource(newSource).isPresent();
-            case 'w' -> beginsWCharRepository.findBySource(newSource).isPresent();
-            case 'x' -> beginsXCharRepository.findBySource(newSource).isPresent();
-            case 'y' -> beginsYCharRepository.findBySource(newSource).isPresent();
-            case 'z' -> beginsZCharRepository.findBySource(newSource).isPresent();
+            case 'a' -> beginsACharRepository.findBySource(source).isPresent();
+            case 'b' -> beginsBCharRepository.findBySource(source).isPresent();
+            case 'c' -> beginsCCharRepository.findBySource(source).isPresent();
+            case 'd' -> beginsDCharRepository.findBySource(source).isPresent();
+            case 'e' -> beginsECharRepository.findBySource(source).isPresent();
+            case 'f' -> beginsFCharRepository.findBySource(source).isPresent();
+            case 'g' -> beginsGCharRepository.findBySource(source).isPresent();
+            case 'h' -> beginsHCharRepository.findBySource(source).isPresent();
+            case 'i' -> beginsICharRepository.findBySource(source).isPresent();
+            case 'j' -> beginsJCharRepository.findBySource(source).isPresent();
+            case 'k' -> beginsKCharRepository.findBySource(source).isPresent();
+            case 'l' -> beginsLCharRepository.findBySource(source).isPresent();
+            case 'm' -> beginsMCharRepository.findBySource(source).isPresent();
+            case 'n' -> beginsNCharRepository.findBySource(source).isPresent();
+            case 'o' -> beginsOCharRepository.findBySource(source).isPresent();
+            case 'p' -> beginsPCharRepository.findBySource(source).isPresent();
+            case 'q' -> beginsQCharRepository.findBySource(source).isPresent();
+            case 'r' -> beginsRCharRepository.findBySource(source).isPresent();
+            case 's' -> beginsSCharRepository.findBySource(source).isPresent();
+            case 't' -> beginsTCharRepository.findBySource(source).isPresent();
+            case 'u' -> beginsUCharRepository.findBySource(source).isPresent();
+            case 'v' -> beginsVCharRepository.findBySource(source).isPresent();
+            case 'w' -> beginsWCharRepository.findBySource(source).isPresent();
+            case 'x' -> beginsXCharRepository.findBySource(source).isPresent();
+            case 'y' -> beginsYCharRepository.findBySource(source).isPresent();
+            case 'z' -> beginsZCharRepository.findBySource(source).isPresent();
             default -> false;
         };
     }
@@ -384,5 +381,40 @@ public class TranslateServiceImpl implements TranslateService {
             case 'z' -> beginsZCharRepository.findAll(pageable);
             default -> throw new EntityNotFoundException();
         };
+    }
+
+    @Override
+    public long count() {
+
+        long count = 0;
+
+        count += beginsACharRepository.count();
+        count += beginsBCharRepository.count();
+        count += beginsCCharRepository.count();
+        count += beginsDCharRepository.count();
+        count += beginsECharRepository.count();
+        count += beginsFCharRepository.count();
+        count += beginsGCharRepository.count();
+        count += beginsHCharRepository.count();
+        count += beginsICharRepository.count();
+        count += beginsJCharRepository.count();
+        count += beginsKCharRepository.count();
+        count += beginsLCharRepository.count();
+        count += beginsMCharRepository.count();
+        count += beginsNCharRepository.count();
+        count += beginsOCharRepository.count();
+        count += beginsPCharRepository.count();
+        count += beginsQCharRepository.count();
+        count += beginsRCharRepository.count();
+        count += beginsSCharRepository.count();
+        count += beginsTCharRepository.count();
+        count += beginsUCharRepository.count();
+        count += beginsVCharRepository.count();
+        count += beginsWCharRepository.count();
+        count += beginsXCharRepository.count();
+        count += beginsYCharRepository.count();
+        count += beginsZCharRepository.count();
+
+        return count;
     }
 }

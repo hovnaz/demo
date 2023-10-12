@@ -30,4 +30,9 @@ public class TranslateEndpoint {
     public Page<?> exportDataAsMap(@RequestParam char byStartChar) {
         return translateService.exportDataAsMap(byStartChar);
     }
+
+    @GetMapping("/count")
+    public long count() {
+        return translateService.count();
+    }
 }

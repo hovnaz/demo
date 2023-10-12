@@ -9,4 +9,6 @@ public interface TranslateService {
     boolean findBySource(String source);
 
     Page<?> exportDataAsMap(char byStartChar);
+
+    long count();
 }
