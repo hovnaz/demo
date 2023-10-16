@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface TranslateService {
 
@@ -8,7 +9,9 @@ public interface TranslateService {
 
     boolean findBySource(String source);
 
-    Page<?> exportDataAsMap(char byStartChar);
+    Page<?> exportDataAsMap(char byStartChar, Pageable pageable);
+
+    void save();
 
     long count();
 }

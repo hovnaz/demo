@@ -3,6 +3,8 @@ package com.example.demo.endpoint;
 import com.example.demo.service.TranslateService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +29,13 @@ public class TranslateEndpoint {
     }
 
     @GetMapping("/exportData")
-    public Page<?> exportDataAsMap(@RequestParam char byStartChar) {
-        return translateService.exportDataAsMap(byStartChar);
+    public Page<?> exportDataAsMap(@RequestParam char byStartChar, @PageableDefault(size = 100_000) Pageable pageable) {
+        return translateService.exportDataAsMap(byStartChar, pageable);
+    }
+
+    @GetMapping("/save")
+    public void save() {
+        translateService.save();
     }
 
     @GetMapping("/count")

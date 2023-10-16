@@ -350,8 +350,7 @@ public class TranslateServiceImpl implements TranslateService {
         };
     }
 
-    public Page<?> exportDataAsMap(char byStartChar) {
-        Pageable pageable = Pageable.ofSize(100_000);
+    public Page<?> exportDataAsMap(char byStartChar, Pageable pageable) {
         return switch (byStartChar) {
             case 'a' -> beginsACharRepository.findAll(pageable);
             case 'b' -> beginsBCharRepository.findAll(pageable);
@@ -381,6 +380,11 @@ public class TranslateServiceImpl implements TranslateService {
             case 'z' -> beginsZCharRepository.findAll(pageable);
             default -> throw new EntityNotFoundException();
         };
+    }
+
+    @Override
+    public void save() {
+
     }
 
     @Override
@@ -416,5 +420,10 @@ public class TranslateServiceImpl implements TranslateService {
         count += beginsZCharRepository.count();
 
         return count;
+    }
+
+
+    private void retrievePaginatedDataByPageAndChar(int page, char c) {
+
     }
 }
